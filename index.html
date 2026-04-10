@@ -1,50 +1,55 @@
-<html lang="en">
+<html>
+</div>
+
+<div class="card">
+<img src="images/accessories/powerbank.jpg">
+<h3>Power Bank</h3>
+<p>₹1499</p>
+</div>
+
+<div class="card">
+<img src="images/accessories/speaker.jpg">
+<h3>Bluetooth Speaker</h3>
+<p>₹2199</p>
+</div>
+
+<div class="card">
+<img src="images/accessories/watch.jpg">
+<h3>Smart Watch</h3>
+<p>₹3999</p>
+</div>
+
 </section>
 
-<h2 class="sectionTitle">Smartphones</h2>
-
-<section id="products" class="productGrid"></section>
-
-<h2 class="sectionTitle">Accessories</h2>
-
-<section class="accessories">
-<div class="accCard">
-<img src="accessories/earbuds.jpg">
-<h3>Wireless Earbuds</h3>
-<p>₹2,499</p>
-</div>
-
-<div class="accCard">
-<img src="accessories/charger.jpg">
-<h3>Fast Charger</h3>
-<p>₹999</p>
-</div>
-
-<div class="accCard">
-<img src="accessories/case.jpg">
-<h3>Phone Cover</h3>
-<p>₹499</p>
-</div>
-</section>
 
 <div id="popup" class="popup">
-<div class="popupContent">
-<span id="close">×</span>
-<img id="popupImg">
-<h2 id="popupName"></h2>
-<p id="popupPrice"></p>
-<p id="popupDesc"></p>
-</div>
+
+<div class="popup-content">
+
+<span id="close">X</span>
+
+<div id="popupData"></div>
+
 </div>
 
-<button id="aiButton">AI Assistant</button>
+</div>
+
 
 <div id="aiBox">
-<h3>Phone Assistant</h3>
-<input id="aiInput" placeholder="Ask something...">
-<div id="aiResponse"></div>
+
+<h4>AI Phone Assistant</h4>
+
+<input id="aiInput" placeholder="Ask about phones">
+
+<button onclick="askAI()">Ask</button>
+
+<p id="aiOutput"></p>
+
 </div>
 
+
+<script src="phones.js"></script>
 <script src="script.js"></script>
+
 </body>
 </html>
