@@ -1,33 +1,74 @@
-const phones=[
+const phonesContainer=document.getElementById("phones")
 
-showProducts(filtered)
+function openPopup(phone){
+
+popup.style.display="block"
+
+popupData.innerHTML=`
+
+<h2>${phone.name}</h2>
+
+<p>Brand: ${phone.brand}</p>
+
+<p>Price: ₹${phone.price}</p>
+
+`
+
 }
 
-const slides=["images/slider1.jpg","images/slider2.jpg","images/slider3.jpg"]
-let index=0
 
-setInterval(()=>{
+search.oninput=()=>{
 
-index=(index+1)%slides.length
-slide.src=slides[index]
+const value=search.value.toLowerCase()
 
-},3000)
+const filtered=phones.filter(p=>p.name.toLowerCase().includes(value))
 
-aiButton.onclick=()=>{
-aiBox.style.display="block"
+displayPhones(filtered)
+
 }
 
-aiInput.onchange=()=>{
 
-const q=aiInput.value.toLowerCase()
+brandFilter.onchange=filter
+priceFilter.onchange=filter
 
-if(q.includes("best phone"))
-aiResponse.innerText="Try Samsung Galaxy S23 FE or iPhone 15"
+function filter(){
+
+let result=[...phones]
+
+if(brandFilter.value!="all")
+
+result=result.filter(p=>p.brand==brandFilter.value)
+
+if(priceFilter.value!="all")
+
+result=result.filter(p=>p.price<priceFilter.value)
+
+
+displayPhones(result)
+
+}
+
+
+close.onclick=()=>popup.style.display="none"
+
+
+displayPhones(phones)
+
+
+function askAI(){
+
+let q=aiInput.value.toLowerCase()
+
+if(q.includes("gaming"))
+aiOutput.innerText="Try Realme Narzo 70 or OPPO F25 Pro"
+
+else if(q.includes("camera"))
+aiOutput.innerText="OPPO Reno 11 and iPhone 15 have excellent cameras"
 
 else if(q.includes("cheap"))
-aiResponse.innerText="Check Oppo A38 or Vivo Y56"
+aiOutput.innerText="Redmi A3 or Redmi 13C are budget friendly"
 
 else
-aiResponse.innerText="Visit the store for more details"
+aiOutput.innerText="Search Samsung, OPPO, Vivo or Apple phones"
 
 }
