@@ -1,113 +1,9 @@
-body{
-
-font-family:'Poppins',sans-serif;
-margin:0;
-background:#0f1115;
-color:white;
-
-}
-
-header{
-
-display:flex;
-justify-content:space-between;
-padding:20px 8%;
-background:#111;
-
-}
-
-.logo{
-
-font-weight:600;
-font-size:22px;
-color:#00d084;
-
-}
-
-nav a{
-
-margin-left:20px;
-text-decoration:none;
-color:white;
-
-}
-
-.hero{
-
-padding:100px 8%;
-text-align:center;
-background:linear-gradient(135deg,#00d084,#0f1115);
-
-}
-
-.hero h1{
-
-font-size:42px;
-
-}
-
-.hero-buttons button{
-
-padding:12px 22px;
-margin:10px;
-border:none;
-border-radius:25px;
-background:#00d084;
-color:black;
-font-weight:600;
-
-}
-
-.stats{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:20px;
-padding:50px 8%;
-
-}
-
-.stat{
-
-background:#1a1d23;
-padding:25px;
-text-align:center;
-border-radius:10px;
-
-}
-
-.catalog{
-
-padding:60px 8%;
-
-}
-
-#search{
+.phone-card img{
 
 width:100%;
-padding:12px;
-border-radius:6px;
-border:none;
-margin-bottom:15px;
-
-}
-
-.filters button{
-
-margin:6px;
-padding:8px 16px;
-border:none;
-border-radius:20px;
-background:#1a1d23;
-color:white;
-
-}
-
-.phone-grid{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+height:220px;
+object-fit:contain;
+margin-bottom:10px;
 
 }
 
@@ -117,21 +13,14 @@ background:#1a1d23;
 padding:20px;
 border-radius:12px;
 cursor:pointer;
-transition:.25s;
+transition:0.3s;
+text-align:center;
 
 }
 
 .phone-card:hover{
 
-transform:translateY(-6px);
-
-}
-
-.phone-card img{
-
-width:100%;
-height:200px;
-object-fit:contain;
+transform:translateY(-8px) scale(1.03);
 
 }
 
@@ -139,92 +28,6 @@ object-fit:contain;
 
 color:#00d084;
 font-weight:600;
-
-}
-
-.accessories{
-
-padding:60px 8%;
-
-}
-
-.access-grid{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:20px;
-
-}
-
-.access-grid div{
-
-background:#1a1d23;
-padding:25px;
-text-align:center;
-border-radius:10px;
-
-}
-
-.testimonials{
-
-padding:60px 8%;
-
-}
-
-.review{
-
-background:#1a1d23;
-padding:20px;
-margin:10px 0;
-border-radius:8px;
-
-}
-
-.contact{
-
-padding:60px 8%;
-background:#14171d;
-
-}
-
-.contact input,
-.contact textarea{
-
-width:100%;
-margin:10px 0;
-padding:10px;
-border:none;
-border-radius:6px;
-
-}
-
-footer{
-
-text-align:center;
-padding:20px;
-background:#111;
-
-}
-
-.modal{
-
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.8);
-align-items:center;
-justify-content:center;
-
-}
-
-.modal-content{
-
-background:#1a1d23;
-padding:30px;
-border-radius:12px;
-max-width:400px;
+font-size:18px;
 
 }
