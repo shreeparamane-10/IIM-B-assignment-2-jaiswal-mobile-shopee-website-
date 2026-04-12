@@ -1,74 +1,132 @@
-const phonesContainer=document.getElementById("phones")
+const phones=[
 
-function openPopup(phone){
+{
+name:"OPPO Reno 12 Pro",
+brand:"OPPO",
+price:"36999",
+spec:"50MP Camera • Dimensity 9200",
+img:"https://commons.wikimedia.org/wiki/Special:FilePath/Oppo%20Reno%2012%20Pro.jpg"
+},
 
-popup.style.display="block"
+{
+name:"OPPO A3 Pro",
+brand:"OPPO",
+price:"17999",
+spec:"5100mAh Battery",
+img:"https://commons.wikimedia.org/wiki/Special:FilePath/Oppo%20A3%20Pro.jpg"
+},
 
-popupData.innerHTML=`
+{
+name:"OPPO Find X7",
+brand:"OPPO",
+price:"69999",
+spec:"Flagship Camera",
+img:"https://commons.wikimedia.org/wiki/Special:FilePath/Oppo%20Find%20X7.jpg"
+},
 
-<h2>${phone.name}</h2>
+{
+name:"Galaxy A55",
+brand:"Samsung",
+price:"34999",
+spec:"6.6 AMOLED",
+img:"https://commons.wikimedia.org/wiki/Special:FilePath/Samsung%20Galaxy%20A55.jpg"
+},
 
-<p>Brand: ${phone.brand}</p>
+{
+name:"iPhone 15",
+brand:"Apple",
+price:"72900",
+spec:"48MP Camera",
+img:"https://commons.wikimedia.org/wiki/Special:FilePath/IPhone%2015.jpg"
+},
 
-<p>Price: ₹${phone.price}</p>
+{
+name:"Vivo V40",
+brand:"Vivo",
+price:"44999",
+spec:"ZEISS Camera",
+img:"https://commons.wikimedia.org/wiki/Special:FilePath/Vivo%20V40.jpg"
+},
+
+{
+name:"Redmi Note 13 Pro",
+brand:"Redmi",
+price:"24999",
+spec:"200MP Camera",
+img:"https://commons.wikimedia.org/wiki/Special:FilePath/Redmi%20Note%2013%20Pro.jpg"
+},
+
+{
+name:"Realme 12 Pro",
+brand:"Realme",
+price:"29999",
+spec:"Sony Camera",
+img:"https://commons.wikimedia.org/wiki/Special:FilePath/Realme%2012%20Pro.jpg"
+}
+
+]
+
+let current="all"
+
+function render(){
+
+let search=document.getElementById("search").value.toLowerCase()
+
+let html=""
+
+phones.forEach(p=>{
+
+if((current==="all"||p.brand===current) && p.name.toLowerCase().includes(search)){
+
+html+=`
+
+<div class="phone-card" onclick="openPhone('${p.name}','${p.price}','${p.spec}')">
+
+<img src="${p.img}">
+
+<h3>${p.name}</h3>
+
+<p class="price">₹${p.price}</p>
+
+</div>
 
 `
 
 }
 
+})
 
-search.oninput=()=>{
-
-const value=search.value.toLowerCase()
-
-const filtered=phones.filter(p=>p.name.toLowerCase().includes(value))
-
-displayPhones(filtered)
+document.getElementById("phoneGrid").innerHTML=html
 
 }
 
+function filterBrand(b){
 
-brandFilter.onchange=filter
-priceFilter.onchange=filter
-
-function filter(){
-
-let result=[...phones]
-
-if(brandFilter.value!="all")
-
-result=result.filter(p=>p.brand==brandFilter.value)
-
-if(priceFilter.value!="all")
-
-result=result.filter(p=>p.price<priceFilter.value)
-
-
-displayPhones(result)
+current=b
+render()
 
 }
 
+function openPhone(name,price,spec){
 
-close.onclick=()=>popup.style.display="none"
+document.getElementById("modal").style.display="flex"
 
+document.getElementById("modalContent").innerHTML=`
 
-displayPhones(phones)
+<h2>${name}</h2>
+<p>Price ₹${price}</p>
+<p>${spec}</p>
 
-
-function askAI(){
-
-let q=aiInput.value.toLowerCase()
-
-if(q.includes("gaming"))
-aiOutput.innerText="Try Realme Narzo 70 or OPPO F25 Pro"
-
-else if(q.includes("camera"))
-aiOutput.innerText="OPPO Reno 11 and iPhone 15 have excellent cameras"
-
-else if(q.includes("cheap"))
-aiOutput.innerText="Redmi A3 or Redmi 13C are budget friendly"
-
-else
-aiOutput.innerText="Search Samsung, OPPO, Vivo or Apple phones"
+`
 
 }
+
+document.getElementById("modal").onclick=function(){
+
+this.style.display="none"
+
+}
+
+document.getElementById("search").addEventListener("input",render)
+
+render()
