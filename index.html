@@ -1,61 +1,177 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<title>Jaiswal Mobile Shopee</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jaiswal Mobile Shope | Nipani</title>
 
 <link rel="stylesheet" href="style.css">
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 </head>
-</div>
 
-<div class="card">
-<img src="images/accessories/powerbank.jpg">
-<h3>Power Bank</h3>
-<p>₹1499</p>
-</div>
+<body>
 
-<div class="card">
-<img src="images/accessories/speaker.jpg">
-<h3>Bluetooth Speaker</h3>
-<p>₹2199</p>
-</div>
+<header>
 
-<div class="card">
-<img src="images/accessories/watch.jpg">
-<h3>Smart Watch</h3>
-<p>₹3999</p>
+<div class="logo">Jaiswal Mobile Shope</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#phones">Phones</a>
+<a href="#accessories">Accessories</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+
+<section class="hero">
+
+<h1>Nipani's Premium Mobile Store</h1>
+
+<p>Official OPPO Dealer • Samsung • Apple • Vivo • Redmi • Realme</p>
+
+<div class="hero-buttons">
+
+<button>Explore Phones</button>
+<button>Visit Store</button>
+
 </div>
 
 </section>
 
 
-<div id="popup" class="popup">
 
-<div class="popup-content">
+<section class="stats">
 
-<span id="close">X</span>
+<div class="stat">
+<h2>150+</h2>
+<p>Models</p>
+</div>
 
-<div id="popupData"></div>
+<div class="stat">
+<h2>6</h2>
+<p>Brands</p>
+</div>
+
+<div class="stat">
+<h2>500+</h2>
+<p>Customers</p>
+</div>
+
+<div class="stat">
+<h2>5★</h2>
+<p>Rating</p>
+</div>
+
+</section>
+
+
+
+<section id="phones" class="catalog">
+
+<h2>Smartphone Catalog</h2>
+
+<input id="search" placeholder="Search phones...">
+
+<div class="filters">
+
+<button onclick="filterBrand('all')">All</button>
+<button onclick="filterBrand('OPPO')">OPPO</button>
+<button onclick="filterBrand('Samsung')">Samsung</button>
+<button onclick="filterBrand('Apple')">Apple</button>
+<button onclick="filterBrand('Vivo')">Vivo</button>
+<button onclick="filterBrand('Redmi')">Redmi</button>
+<button onclick="filterBrand('Realme')">Realme</button>
 
 </div>
 
+<div id="phoneGrid" class="phone-grid"></div>
+
+</section>
+
+
+
+<section class="accessories" id="accessories">
+
+<h2>Accessories</h2>
+
+<div class="access-grid">
+
+<div>Earphones</div>
+<div>Chargers</div>
+<div>Cases</div>
+<div>Tempered Glass</div>
+<div>Power Banks</div>
+<div>Speakers</div>
+<div>Smart Watches</div>
+<div>More</div>
+
 </div>
 
+</section>
 
-<div id="aiBox">
 
-<h4>AI Phone Assistant</h4>
 
-<input id="aiInput" placeholder="Ask about phones">
+<section class="testimonials">
 
-<button onclick="askAI()">Ask</button>
+<h2>Customer Reviews</h2>
 
-<p id="aiOutput"></p>
+<div class="review">⭐⭐⭐⭐⭐ Best mobile shop in Nipani</div>
+<div class="review">⭐⭐⭐⭐⭐ Amazing OPPO collection</div>
+<div class="review">⭐⭐⭐⭐⭐ Great prices and service</div>
+
+</section>
+
+
+
+<section class="about">
+
+<h2>About Jaiswal Mobile Shope</h2>
+
+<p>
+
+Jaiswal Mobile Shope in Nipani is a trusted destination for the latest smartphones and accessories.  
+We are an **official OPPO dealer** and also provide phones from Samsung, Apple, Vivo, Redmi, and Realme.
+
+</p>
+
+</section>
+
+
+
+<section id="contact" class="contact">
+
+<h2>Contact Us</h2>
+
+<input placeholder="Your Name">
+<input placeholder="Phone Number">
+<textarea placeholder="Your Inquiry"></textarea>
+
+<p>📍 Nipani, Karnataka</p>
+
+</section>
+
+
+
+<footer>
+
+© 2026 Jaiswal Mobile Shope
+
+</footer>
+
+
+
+<div id="modal" class="modal">
+
+<div id="modalContent" class="modal-content"></div>
 
 </div>
 
-
-<script src="phones.js"></script>
 <script src="script.js"></script>
 
 </body>
